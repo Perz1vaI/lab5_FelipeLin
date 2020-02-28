@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -67,7 +69,7 @@ public class MenuStanLee extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jl_villanos = new javax.swing.JList<>();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
+        jt1 = new javax.swing.JTree();
         jd_superpoder = new javax.swing.JDialog();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -78,9 +80,9 @@ public class MenuStanLee extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         popup_heroes = new javax.swing.JPopupMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        agregar_heroe = new javax.swing.JMenuItem();
         popup_villanos = new javax.swing.JPopupMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        agregar_villano = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -209,8 +211,8 @@ public class MenuStanLee extends javax.swing.JFrame {
         treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("The Sinister Six");
         treeNode2.add(treeNode3);
         treeNode1.add(treeNode2);
-        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane4.setViewportView(jTree1);
+        jt1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane4.setViewportView(jt1);
 
         javax.swing.GroupLayout jd_heroesLayout = new javax.swing.GroupLayout(jd_heroes.getContentPane());
         jd_heroes.getContentPane().setLayout(jd_heroesLayout);
@@ -414,11 +416,16 @@ public class MenuStanLee extends javax.swing.JFrame {
                 .addContainerGap(144, Short.MAX_VALUE))
         );
 
-        jMenuItem1.setText("jMenuItem1");
-        popup_heroes.add(jMenuItem1);
+        agregar_heroe.setText("jMenuItem1");
+        agregar_heroe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregar_heroeActionPerformed(evt);
+            }
+        });
+        popup_heroes.add(agregar_heroe);
 
-        jMenuItem2.setText("jMenuItem2");
-        popup_villanos.add(jMenuItem2);
+        agregar_villano.setText("jMenuItem2");
+        popup_villanos.add(agregar_villano);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -540,14 +547,18 @@ public class MenuStanLee extends javax.swing.JFrame {
 
     private void jl_heroeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_heroeMouseClicked
         // TODO add your handling code here:
-            if (jl_heroe.getSelectedIndex() >= 0) {
+        if (jl_heroe.getSelectedIndex() >= 0) {
             if (evt.isMetaDown()) {
-                popup_modificar.show(evt.getComponent(), evt.getX(), evt.getY());
+                agregar_heroe.show();
             }
         }
-       
-        
+
+
     }//GEN-LAST:event_jl_heroeMouseClicked
+
+    private void agregar_heroeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_heroeActionPerformed
+
+    }//GEN-LAST:event_agregar_heroeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -585,6 +596,8 @@ public class MenuStanLee extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem agregar_heroe;
+    private javax.swing.JMenuItem agregar_villano;
     private javax.swing.JButton bt_heroe_regresar;
     private javax.swing.JButton bt_regresar;
     private javax.swing.JButton bt_regresar1;
@@ -622,8 +635,6 @@ public class MenuStanLee extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -631,12 +642,12 @@ public class MenuStanLee extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTree jTree1;
     private javax.swing.JDialog jd_MenuStan;
     private javax.swing.JDialog jd_heroes;
     private javax.swing.JDialog jd_superpoder;
     private javax.swing.JList<String> jl_heroe;
     private javax.swing.JList<String> jl_villanos;
+    private javax.swing.JTree jt1;
     private javax.swing.JPasswordField pf_pass;
     private javax.swing.JPopupMenu popup_heroes;
     private javax.swing.JPopupMenu popup_villanos;
