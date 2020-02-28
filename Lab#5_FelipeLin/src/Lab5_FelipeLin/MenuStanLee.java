@@ -24,7 +24,7 @@ public class MenuStanLee extends javax.swing.JFrame {
     public MenuStanLee() {
         initComponents();
         setLocationRelativeTo(null);
-
+        
     }
 
     /**
@@ -76,13 +76,17 @@ public class MenuStanLee extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        ta_descrip = new javax.swing.JTextArea();
+        tf_poder = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
+        button_regresar = new javax.swing.JButton();
+        rb_true = new javax.swing.JRadioButton();
+        rb_false = new javax.swing.JRadioButton();
         popup_heroes = new javax.swing.JPopupMenu();
         agregar_heroe = new javax.swing.JMenuItem();
         popup_villanos = new javax.swing.JPopupMenu();
         agregar_villano = new javax.swing.JMenuItem();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -107,6 +111,11 @@ public class MenuStanLee extends javax.swing.JFrame {
         });
 
         jButton5.setText("Crear Superpoderes");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jd_MenuStanLayout = new javax.swing.GroupLayout(jd_MenuStan.getContentPane());
         jd_MenuStan.getContentPane().setLayout(jd_MenuStanLayout);
@@ -286,9 +295,10 @@ public class MenuStanLee extends javax.swing.JFrame {
             .addGroup(jd_heroesLayout.createSequentialGroup()
                 .addGap(290, 290, 290)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jd_heroesLayout.createSequentialGroup()
-                .addGap(740, 740, 740)
-                .addComponent(bt_heroe_regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_heroesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(bt_heroe_regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
         jd_heroesLayout.setVerticalGroup(
             jd_heroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -352,8 +362,9 @@ public class MenuStanLee extends javax.swing.JFrame {
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(68, 68, 68)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(bt_heroe_regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(bt_heroe_regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jd_superpoder.setBounds(new java.awt.Rectangle(0, 23, 600, 600));
@@ -369,9 +380,29 @@ public class MenuStanLee extends javax.swing.JFrame {
 
         jLabel20.setText("Mortal");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        ta_descrip.setColumns(20);
+        ta_descrip.setRows(5);
+        jScrollPane1.setViewportView(ta_descrip);
+
+        jButton4.setText("Crear");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
+
+        button_regresar.setText("Regresar");
+        button_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_regresarMouseClicked(evt);
+            }
+        });
+
+        buttonGroup1.add(rb_true);
+        rb_true.setText("Si");
+
+        buttonGroup1.add(rb_false);
+        rb_false.setText("No");
 
         javax.swing.GroupLayout jd_superpoderLayout = new javax.swing.GroupLayout(jd_superpoder.getContentPane());
         jd_superpoder.getContentPane().setLayout(jd_superpoderLayout);
@@ -388,15 +419,23 @@ public class MenuStanLee extends javax.swing.JFrame {
                             .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tf_poder, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(47, 47, 47)
                         .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(rb_true)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rb_false))
                     .addGroup(jd_superpoderLayout.createSequentialGroup()
                         .addGap(58, 58, 58)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jd_superpoderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(button_regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(64, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_superpoderLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
         jd_superpoderLayout.setVerticalGroup(
             jd_superpoderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -407,13 +446,18 @@ public class MenuStanLee extends javax.swing.JFrame {
                 .addGroup(jd_superpoderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_poder, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rb_true)
+                    .addComponent(rb_false))
                 .addGap(38, 38, 38)
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addGroup(jd_superpoderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28))
         );
 
         agregar_heroe.setText("jMenuItem1");
@@ -496,7 +540,7 @@ public class MenuStanLee extends javax.swing.JFrame {
             jd_MenuStan.setLocationRelativeTo(null);
             jd_MenuStan.setVisible(true);
             this.dispose();
-
+            
         } else {
             JOptionPane.showMessageDialog(this, "Ingreso el usuario y contraseña incorrecta");
         }
@@ -517,26 +561,28 @@ public class MenuStanLee extends javax.swing.JFrame {
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
         // TODO add your handling code here:
-        if (lista_villano.size() >= 0) {
-            DefaultListModel modelo = (DefaultListModel) jl_villanos.getModel();
-            modelo.addElement(new SuperHeroes(tf_villanos_nom.getText(), Integer.parseInt(tf_villanos_edad.getText()), tf_villanos_origen.getText(), Integer.parseInt(tf_villanos_altura.getText()), Integer.parseInt(tf_villanos_homicidios.getText())));
+        DefaultListModel modelo = (DefaultListModel) jl_villanos.getModel();
+        modelo.addElement(new SuperHeroes(tf_villanos_nom.getText(), Integer.parseInt(tf_villanos_edad.getText()), tf_villanos_origen.getText(), Integer.parseInt(tf_villanos_altura.getText()), Integer.parseInt(tf_villanos_homicidios.getText())));
+        
+        tf_villanos_altura.setText("");
+        tf_villanos_edad.setText("");
+        tf_villanos_homicidios.setText("");
+        tf_villanos_nom.setText("");
+        tf_villanos_origen.setText("");
 
-        } else {
-            JOptionPane.showMessageDialog(jd_heroes, "No hay villanos");
-        }
     }//GEN-LAST:event_jButton8MouseClicked
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
         // TODO add your handling code here:
 
-        if (lista_heroe.size() >= 0) {
+        DefaultListModel modelo = (DefaultListModel) jl_heroe.getModel();
+        modelo.addElement(new SuperHeroes(tf_heroe_nom1.getText(), Integer.parseInt(tf_heroe_edad1.getText()), tf_heroe_origen1.getText(), Integer.parseInt(tf_heroe_altura1.getText()), 0));
+        
+        tf_heroe_nom1.setText("");
+        tf_heroe_altura1.setText("");
+        tf_heroe_edad1.setText("");
+        tf_heroe_origen1.setText("");
 
-            DefaultListModel modelo = (DefaultListModel) jl_heroe.getModel();
-            modelo.addElement(new SuperHeroes(tf_heroe_nom1.getText(), Integer.parseInt(tf_heroe_edad1.getText()), tf_heroe_origen1.getText(), Integer.parseInt(tf_heroe_altura1.getText()), 0));
-
-        } else {
-            JOptionPane.showMessageDialog(jd_heroes, "No hay heroes");
-        }
     }//GEN-LAST:event_jButton10MouseClicked
 
     private void bt_heroe_regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_heroe_regresarMouseClicked
@@ -552,13 +598,39 @@ public class MenuStanLee extends javax.swing.JFrame {
                 agregar_heroe.show();
             }
         }
-
+        
 
     }//GEN-LAST:event_jl_heroeMouseClicked
 
     private void agregar_heroeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_heroeActionPerformed
 
     }//GEN-LAST:event_agregar_heroeActionPerformed
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+        boolean confirmar = false;
+        if (rb_true.isSelected()) {
+            confirmar = true;
+        } else if (rb_false.isSelected()) {
+            confirmar = false;
+        }
+        lista_super.add(new Superpoderes(Integer.parseInt(tf_poder.getText()), ta_descrip.getText(), confirmar));
+        
+        JOptionPane.showMessageDialog(jd_superpoder, "Creado exsitosamente");
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void button_regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_regresarMouseClicked
+        // TODO add your handling code here:
+        jd_MenuStan.setVisible(true);
+        jd_superpoder.dispose();
+    }//GEN-LAST:event_button_regresarMouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+        jd_superpoder.setLocationRelativeTo(null);
+        jd_superpoder.setVisible(true);
+        jd_MenuStan.dispose();
+    }//GEN-LAST:event_jButton5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -611,10 +683,13 @@ public class MenuStanLee extends javax.swing.JFrame {
     private javax.swing.JButton bt_regresar7;
     private javax.swing.JButton bt_regresar8;
     private javax.swing.JButton bt_regresar9;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton button_regresar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
@@ -639,9 +714,6 @@ public class MenuStanLee extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JDialog jd_MenuStan;
     private javax.swing.JDialog jd_heroes;
     private javax.swing.JDialog jd_superpoder;
@@ -651,10 +723,14 @@ public class MenuStanLee extends javax.swing.JFrame {
     private javax.swing.JPasswordField pf_pass;
     private javax.swing.JPopupMenu popup_heroes;
     private javax.swing.JPopupMenu popup_villanos;
+    private javax.swing.JRadioButton rb_false;
+    private javax.swing.JRadioButton rb_true;
+    private javax.swing.JTextArea ta_descrip;
     private javax.swing.JTextField tf_heroe_altura1;
     private javax.swing.JTextField tf_heroe_edad1;
     private javax.swing.JTextField tf_heroe_nom1;
     private javax.swing.JTextField tf_heroe_origen1;
+    private javax.swing.JTextField tf_poder;
     private javax.swing.JTextField tf_username;
     private javax.swing.JTextField tf_villanos_altura;
     private javax.swing.JTextField tf_villanos_edad;
@@ -664,5 +740,6 @@ public class MenuStanLee extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     ArrayList<SuperHeroes> lista_heroe = new ArrayList();
     ArrayList<Villanos> lista_villano = new ArrayList();
-
+    ArrayList<Superpoderes> lista_super = new ArrayList();
+    
 }
