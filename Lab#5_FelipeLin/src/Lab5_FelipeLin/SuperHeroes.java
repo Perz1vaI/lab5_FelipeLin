@@ -72,7 +72,8 @@ public class SuperHeroes {
 
     @Override
     public String toString() {
-        return "SuperHeroes{" + "superpoderes=" + superpoderes + ", nombre=" + nombre + ", edad=" + edad + ", PlanetaOrigin=" + PlanetaOrigin + ", altura=" + altura + ", atrapados=" + atrapados + '}';
+        return nombre;
+
     }
 
 }

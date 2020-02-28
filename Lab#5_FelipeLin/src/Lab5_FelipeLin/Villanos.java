@@ -1,10 +1,9 @@
-
 package Lab5_FelipeLin;
 
 import java.util.ArrayList;
 
-
 public class Villanos {
+
     private ArrayList superpoderes = new ArrayList();
     private String nombre;
     private int edad;
@@ -80,9 +79,7 @@ public class Villanos {
 
     @Override
     public String toString() {
-        return "Villanos{" + "superpoderes=" + superpoderes + ", nombre=" + nombre + ", edad=" + edad + ", PlanetaOrigin=" + PlanetaOrigin + ", altura=" + altura + ", carcel=" + carcel + ", muertos=" + muertos + '}';
+        return nombre;
     }
-    
-    
-    
+
 }
