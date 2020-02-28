@@ -1,11 +1,9 @@
-
 package Lab5_FelipeLin;
 
 import java.util.ArrayList;
 
-
 public class SuperHeroes {
-    
+
     private ArrayList superpoderes = new ArrayList();
     private String nombre;
     private int edad;
@@ -14,6 +12,14 @@ public class SuperHeroes {
     private int atrapados;
 
     public SuperHeroes() {
+    }
+
+    public SuperHeroes(String nombre, int edad, String PlanetaOrigin, double altura, int atrapados) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.PlanetaOrigin = PlanetaOrigin;
+        this.altura = altura;
+        this.atrapados = atrapados;
     }
 
     public ArrayList getSuperpoderes() {
@@ -68,7 +74,5 @@ public class SuperHeroes {
     public String toString() {
         return "SuperHeroes{" + "superpoderes=" + superpoderes + ", nombre=" + nombre + ", edad=" + edad + ", PlanetaOrigin=" + PlanetaOrigin + ", altura=" + altura + ", atrapados=" + atrapados + '}';
     }
-    
-    
-    
+
 }
